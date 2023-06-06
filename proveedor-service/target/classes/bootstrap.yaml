@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: proveedor-service
+  cloud:
+    config:
+      enabled: true
+      uri: http://localhost:8081
+  datasource:
+    url: jdbc:postgresql://localhost:5432/proveedorDB
+    username: postgres
+    password: postgres123
+  jpa:
+    hibernate:
+      ddl-auto: update

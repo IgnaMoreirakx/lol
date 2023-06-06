@@ -1,0 +1,5 @@
+tingeso\microservicios\MicroserviciosApplication.class
+tingeso\microservicios\Repositories\proveedorRepository.class
+tingeso\microservicios\Controllers\proveedorController.class
+tingeso\microservicios\Services\proveedorService.class
+tingeso\microservicios\Entity\proveedorEntity.class
