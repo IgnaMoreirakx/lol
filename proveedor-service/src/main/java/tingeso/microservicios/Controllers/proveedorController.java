@@ -8,6 +8,7 @@ import tingeso.microservicios.Services.proveedorService;
 
 import java.util.List;
 
+@CrossOrigin
 @RestController
 @RequestMapping("/proveedor")
 public class proveedorController {

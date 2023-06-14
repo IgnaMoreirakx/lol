@@ -1,0 +1,54 @@
+*{
+  font-family: sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.content-table{
+  border: 1px;
+  margin-top: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.9em;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  overflow-x: auto;
+}
+.content-table thead tr{
+  background-color: #E7D3AF;
+  color: black;
+  text-align: left;
+  font-weight: bold;
+}
+.content-table th,
+.content-table td{
+  padding: 12px 15px;
+}
+.header{
+  background-color: #E7D3AF;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 85px;
+  padding: 5px 10%;
+}
+.header .logo{
+  margin-right: auto;
+  color: black;
+  font-family: 'Brush Script MT',serif;
+}
+
+.h1{
+  margin-top: 50px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.a{
+  color: black;
+  font-family: 'Brush Script MT',serif;
+}
+.a:hover{
+  color: black;
+  font-family: 'Brush Script MT',serif;
+  text-decoration: none;
+}
