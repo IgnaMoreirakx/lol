@@ -9,7 +9,11 @@ class acopioUploadService {
     }
 
     uploadGrasas(file){
-        return axios.post(ACOPIO_API_URL + "/", file);
+        return axios.post(ACOPIO_API_URL + "/filegrasas", file);
+    }
+
+    getAcopios(){
+        return axios.get(ACOPIO_API_URL);
     }
 
 }

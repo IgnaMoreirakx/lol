@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 import '../../styles/uploadFileStyle.css';
+import Navbar from '../../components/navbar';
 
 class uploadFile extends Component{
     render(){
         return(
             <div>
+                <Navbar />
                 <section class="page-contain">
                     <a style = {{color: "black", fontFamily: 'Brush Script MT'}} href="/fileUploadKls" class="data-card">
                         <h4>Acopio kilos</h4>

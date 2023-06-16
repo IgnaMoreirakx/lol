@@ -1,0 +1,99 @@
+.mainclass{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 15px;
+    color: black;
+
+  }
+  form {
+    margin-top: 80px;
+    color: black;
+    border: 3px white;
+
+  }
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 16px 8px;
+    margin: 8px 0;
+    display: inline-block;
+    box-sizing: border-box;
+    color: black;
+    appearance: textfield;
+  }
+  h1 {
+    text-align:center;
+    color: black;
+  }
+  .formcontainer {
+    text-align: left;
+    border: 3px white;
+    color: black;
+  }
+  .container {
+    padding: 16px 0;
+    text-align:left;
+    color: black;
+    align-items: initial;
+    appearance: textfield;
+  }
+  .header{
+    background-color: #E7D3AF;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 85px;
+    padding: 5px 10%;
+  }
+  .header .logo{
+    margin-right: auto;
+    color: black;
+    font-family: 'Brush Script MT',serif;
+  }
+  .header .btn button{
+    margin-left: 20px;
+    font-weight: 700;
+    padding: 9px 40px;
+    background: #F3F0ED;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+  }
+  .header .btn button:hover{
+    background-color: #F3F0ED;
+    transform: scale(0.95);
+  }
+  .mensaje{
+    font-family: Roboto, Arial, sans-serif;
+    text-align: center;
+    margin: 24px 50px 12px;
+    color: black;
+  }
+  .but {
+    font-weight: 700;
+    padding: 9px 40px;
+    background: #E7D3AF;
+    border: none;
+    border-radius: 80px;
+    cursor: pointer;
+  }
+  .but:hover{
+    background-color: #E7D3AF;
+    transform: scale(0.95);
+  }
+  .placeholder{
+    font-size: x-large;
+    width: 500px;
+    height: 35px;
+    float: left;
+  }
+  .a{
+    color: black;
+    font-family: 'Brush Script MT',serif;
+  }
+  .a:hover{
+    color: black;
+    font-family: 'Brush Script MT',serif;
+    text-decoration: none;
+  } 

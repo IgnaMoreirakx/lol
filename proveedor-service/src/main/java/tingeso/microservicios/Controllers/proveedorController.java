@@ -8,7 +8,7 @@ import tingeso.microservicios.Services.proveedorService;
 
 import java.util.List;
 
-@CrossOrigin
+@CrossOrigin(origins = "http://localhost:3000")
 @RestController
 @RequestMapping("/proveedor")
 public class proveedorController {
@@ -25,7 +25,7 @@ public class proveedorController {
         return ResponseEntity.ok(proveedores);
     }
 
-    @PostMapping
+    @PostMapping()
     public ResponseEntity<proveedorEntity> save(@RequestBody proveedorEntity proveedor){
         return ResponseEntity.ok(proveedorservice.save(proveedor));
     }

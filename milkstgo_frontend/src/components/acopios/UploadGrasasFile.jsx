@@ -1,12 +1,12 @@
-import React, { Component } from 'react'
-import acopioUploadService from '../../services/AcopioUploadService';
+import { Component } from "react";
+import AcopioUploadService from "../../services/AcopioUploadService";
 import swal from 'sweetalert';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import '../../styles/klsGrasas.css';
 import Navbar from '../../components/navbar';
 
-class uploadKilosFile extends Component{
+class uploadGrasasFile extends Component{
     constructor(props){
         super(props);
         this.state = {
@@ -14,7 +14,6 @@ class uploadKilosFile extends Component{
         };
         this.onFileChange = this.onFileChange.bind(this);
     }
-
     onFileChange(event){
         this.setState({file: event.target.files[0]});
     }
@@ -24,7 +23,7 @@ class uploadKilosFile extends Component{
         }).then(res =>{
             const formData = new FormData();
             formData.append("file", this.state.file);
-            acopioUploadService.uploadKilos(formData).then((res) =>{
+            AcopioUploadService.uploadGrasas(formData).then(res =>{
 
             });
         });
@@ -48,6 +47,5 @@ class uploadKilosFile extends Component{
             </div>
         )
     }
-
 }
-export default uploadKilosFile;
+export default uploadGrasasFile;

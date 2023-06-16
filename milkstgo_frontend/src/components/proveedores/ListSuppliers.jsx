@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import '../../styles/listaStyle.css';
-import proveedoreService from '../../services/ProveedoreService';
+import proveedorService from '../../services/ProveedorService';
 import Navbar from '../../components/navbar';
 
 class ListSuppliers extends Component{
@@ -13,7 +13,7 @@ class ListSuppliers extends Component{
     }
 
     componentDidMount(){
-        proveedoreService.getProveedores().then((res)=> {
+        proveedorService.getProveedores().then((res)=> {
             console.log(res.data);
             this.setState({ proveedores: res.data});
         });
