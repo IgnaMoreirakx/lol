@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: proveedor
+  labels:
+    app: proveedor
+spec:
+  selector:
+    matchLabels:
+      app: proveedor
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: proveedor
+    spec:
+      containers:
+      - name: proveedor
+        image: imoreira25/ting2_proveedor:latest
+        env:
+        - name: DB_HOST
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-db
+              key: host
+        - name: DB_NAME
+          valueFrom:
+            configMapKeyRef:
+              name: postgres-db
+              key: name
+        - name: DB_USERNAME
+          valueFrom:
+            secretKeyRef:
+              name: postgres-user-credentials
+              key: username
+        - name: DB_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: postgres-user-credentials
+              key: password
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: proveedor
+  labels:
+    app: proveedor
+spec:
+  selector:
+    app: proveedor
+  ports:
+    - nodePort: 30500
+      protocol: TCP
+      port: 8010
+      targetPort: 8002
+  type: NodePort

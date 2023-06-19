@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: tingeso.getewayservice.GetewayServiceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 23.015 s - in tingeso.getewayservice.GetewayServiceApplicationTests
