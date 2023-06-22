@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: gateway-deployment
+  labels:
+    app: gateway-deployment
+spec:
+  selector:
+    matchLabels:
+      app: gateway-deployment
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: gateway-deployment
+    spec:
+      containers:
+      - name: gateway-deployment
+        image: imoreira25/ting2_gateway
+        ports:
+            - containerPort: 8080
+        env:
+        - name: eureka.client.serviceUrl.defaultZone
+          value: http://eureka-service:8761/eureka
+        - name: EUREKA
+          value: eureka-service
+        - name: HOSTNAME
+          value: config-service
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: gateway-service
+  labels:
+    app: gateway-service
+spec:
+  selector:
+    app: gateway-deployment
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer

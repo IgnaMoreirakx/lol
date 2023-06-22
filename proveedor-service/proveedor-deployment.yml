@@ -1,23 +1,33 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: proveedor
+  name: proveedor-deployment
   labels:
-    app: proveedor
+    app: proveedor-deployment
 spec:
   selector:
     matchLabels:
-      app: proveedor
+      app: proveedor-deployment
   replicas: 2
   template:
     metadata:
       labels:
-        app: proveedor
+        app: proveedor-deployment
     spec:
       containers:
       - name: proveedor
-        image: imoreira25/ting2_proveedor:latest
+        image: imoreira25/ting2_proveedor
+        ports:
+            - containerPort: 8082
         env:
+        - name: spring.cloud.config.uri
+          value: http://config-service:8081
+        - name: spring.config.import
+          value: optional:configserver:http://config-service:8081
+        - name: eureka.client.serviceUrl.defaultZone
+          value: http://eureka-service:8761/eureka
+        - name: EUREKA
+          value: eureka-service
         - name: DB_HOST
           valueFrom:
             configMapKeyRef:
@@ -42,15 +52,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: proveedor
+  name: proveedor-service
   labels:
-    app: proveedor
+    app: proveedor-service
 spec:
   selector:
-    app: proveedor
+    app: proveedor-deployment
   ports:
-    - nodePort: 30500
-      protocol: TCP
-      port: 8010
-      targetPort: 8002
-  type: NodePort
+    - protocol: TCP
+      port: 8082
+      targetPort: 8082
+  type: LoadBalancer

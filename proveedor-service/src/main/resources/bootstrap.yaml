@@ -7,7 +7,7 @@ spring:
   cloud:
     config:
       enabled: true
-      uri: http://config-service:8081
+      uri: http://localhost:8081
   datasource:
     url: jdbc:postgresql://${DB_HOST:localhost}/${DB_NAME:proveedorDB}
     username: ${DB_USERNAME:postgres}
