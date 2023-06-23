@@ -8,7 +8,7 @@ eureka:
     service-url:
       default-zone: http://eureka-service.default.svc.cluster.local:8761/eureka/
   instance:
-    hostname: localhost
+    hostname: gateway-service
 
 spring:
   cloud:
