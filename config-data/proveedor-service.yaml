@@ -8,3 +8,4 @@ eureka:
       default-zone: http://eureka-service:8761/eureka
   instance:
     instance-id: ${spring.application.name}:${spring.application.instance_id:8082}
+    hostname: proveedor-service
