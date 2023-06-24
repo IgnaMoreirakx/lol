@@ -6,9 +6,9 @@ eureka:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      default-zone: http://eureka-service.default.svc.cluster.local:8761/eureka/
+      default-zone: http://${EUREKA:localhost}:8761/eureka
   instance:
-    hostname: gateway-service
+    hostname: localhost
 
 spring:
   cloud:
@@ -26,6 +26,10 @@ spring:
             allowed-headers: "*"
             allow-credentials: true
       routes:
+        - id: proveedor-service
+          uri: lb://proveedor-service
+          predicates:
+            - Path=/proveedor/**
         - id: pagos-service
           uri: lb://pagos-service
           predicates:
@@ -34,7 +38,3 @@ spring:
           uri: lb://acopio-service
           predicates:
             - Path=/acopio/**
-        - id: proveedor-service
-          uri: lb://proveedor-service
-          predicates:
-            - Path=/proveedor/**
