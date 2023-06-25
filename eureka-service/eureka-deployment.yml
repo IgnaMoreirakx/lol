@@ -14,8 +14,9 @@ spec:
       labels:
         app: eureka-deployment
     spec:
+      hostname: eureka-service
       containers:
-        - name: eureka
+        - name: eureka-service
           image: imoreira25/ting2_eureka
           ports:
             - containerPort: 8761

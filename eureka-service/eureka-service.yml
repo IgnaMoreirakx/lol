@@ -8,7 +8,8 @@ spec:
   selector:
     app: eureka-deployment
   ports:
-    - protocol: TCP
+    - nodePort: 30500
+      protocol: TCP
       port: 8761
       targetPort: 8761
-  type: LoadBalancer
+  type: NodePort

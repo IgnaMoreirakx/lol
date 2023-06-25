@@ -1,9 +1,8 @@
 import { Component} from "react";
-import proveedorService from '../../services/ProveedorService';
 import '../../styles/crearProveedor.css';
 import Axios from "axios";
 import Navbar from '../../components/navbar';
-
+import proveedorService from '../../services/ProveedorService';
 
 class NewSupplier extends Component{
     constructor(props) {
@@ -36,7 +35,7 @@ class NewSupplier extends Component{
             }
         }
 
-        Axios.post("http://localhost:8080/proveedor", proveedor, axiosCnfig).then(res =>{
+        proveedorService.createProveedor(proveedor).then(res =>{
             window.location.href = "/ver-proveedores"; 
         })
     }

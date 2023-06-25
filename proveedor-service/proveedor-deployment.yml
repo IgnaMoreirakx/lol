@@ -15,7 +15,7 @@ spec:
         app: proveedor-deployment
     spec:
       containers:
-      - name: proveedor
+      - name: proveedor-service
         image: imoreira25/ting2_proveedor
         ports:
             - containerPort: 8082
@@ -25,7 +25,7 @@ spec:
         - name: spring.config.import
           value: optional:configserver:http://config-service:8081
         - name: eureka.client.serviceUrl.defaultZone
-          value: http://eureka-service.default.svc.cluster.local:8761/eureka/
+          value: http://eureka-service:8761/eureka
         - name: EUREKA
           value: eureka-service
         - name: DB_HOST
